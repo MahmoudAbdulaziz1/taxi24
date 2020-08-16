@@ -1,9 +1,9 @@
 package com.taxi24.util;
 
-import com.taxi24.entity.Trip;
 import com.taxi24.enums.ServiceNames;
-import com.taxi24.enums.TripStatus;
 import com.taxi24.repository.TripRepository;
+import com.taxi24.entity.Trip;
+import com.taxi24.enums.TripStatus;
 import com.taxi24.service.RESTResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.JpaRepository;

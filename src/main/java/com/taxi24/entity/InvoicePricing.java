@@ -19,8 +19,8 @@ public class InvoicePricing implements Serializable {
     @Column(name = "price_id")
     private long priceId;
 
-    @Column(name = "price_type", nullable = false)
-    private PricingType pricetype;
+    @Column(name = "price_type")
+    private PricingType priceType;
 
     @Column(name = "price_cost", nullable = false)
     private double priceCost;
@@ -43,7 +43,7 @@ public class InvoicePricing implements Serializable {
     }
 
     public InvoicePricing(PricingType priceType, double priceCost, PricingCurrency priceCurrency) {
-        this.pricetype = priceType;
+        this.priceType = priceType;
         this.priceCost = priceCost;
         this.priceCurrency = priceCurrency;
     }
@@ -64,12 +64,12 @@ public class InvoicePricing implements Serializable {
         this.priceId = priceId;
     }
 
-    public PricingType getPrice_type() {
-        return pricetype;
+    public PricingType getPriceType() {
+        return priceType;
     }
 
-    public void setPrice_type(PricingType priceType) {
-        this.pricetype= priceType;
+    public void setPriceType(PricingType priceType) {
+        this.priceType = priceType;
     }
 
     public double getPriceCost() {
@@ -114,7 +114,7 @@ public class InvoicePricing implements Serializable {
 
     @Override
     public String toString() {
-        return "Pricing [priceId=" + priceId + ", priceType" + pricetype + ", priceCost=" + priceCost +
+        return "Pricing [priceId=" + priceId + ", priceType" + priceType + ", priceCost=" + priceCost +
                 ", priceCurrency=" + priceCurrency + "]";
     }
 }

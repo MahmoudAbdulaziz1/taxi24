@@ -63,8 +63,13 @@ public class TripAspect {
     public void measureInvoice(Trip trip){
         List<InvoicePricing> pricing = pricingRepo.findAll();
         double distanceInKM = DistanceUtil.distance(trip.getFromLat(), trip.getToLat(), trip.getFromLng(), trip.getToLng());
-        long secs = ( trip.getEndDateTime().getTime() -  trip.getStartDateTime().getTime()) / 1000;
-        long hours = secs / 3600;
+        long hours = 0;
+        try {
+            long secs = (trip.getEndDateTime().getTime() - trip.getStartDateTime().getTime()) / 1000;
+            hours = secs / 3600;
+        }catch (Exception e){
+            hours = 0;
+        }
         double tripCost = pricing.get(0).getPriceCost() + (pricing.get(1).getPriceCost() * distanceInKM) +
                 (pricing.get(2).getPriceCost() * hours);
         System.out.println(tripCost);

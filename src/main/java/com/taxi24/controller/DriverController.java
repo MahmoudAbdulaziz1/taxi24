@@ -36,7 +36,8 @@ public class DriverController {
     }
 
     @GetMapping("/{specificPointLat}/{specificPointLng}")
-    public RESTResponse getAllAvailableDriversWithin3KM(@PathVariable float specificPointLat, @PathVariable float specificPointLng){
+    public RESTResponse getAllAvailableDriversWithin3KM(@PathVariable double specificPointLat, @PathVariable double specificPointLng){
         return driverService.getAllAvailableDriversWithin3KM(specificPointLat, specificPointLng);
     }
+
 }

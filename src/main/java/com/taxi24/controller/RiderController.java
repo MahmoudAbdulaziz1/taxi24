@@ -1,8 +1,8 @@
 package com.taxi24.controller;
 
 
-import com.taxi24.entity.Rider;
 import com.taxi24.service.RiderService;
+import com.taxi24.entity.Rider;
 import com.taxi24.service.RESTResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
